@@ -1,26 +1,4 @@
-<?php
 
-$conn = mysqli_connect('localhost','root','','contact_db') or die('connection failed');
-
-if(isset($_POST['send'])){
-
-   $name = mysqli_real_escape_string($conn, $_POST['name']);
-   $email = mysqli_real_escape_string($conn, $_POST['email']);
-   $number = mysqli_real_escape_string($conn, $_POST['number']);
-   $msg = mysqli_real_escape_string($conn, $_POST['message']);
-
-   $select_message = mysqli_query($conn, "SELECT * FROM `contact_form` WHERE name = '$name' AND email = '$email' AND number = '$number' AND message = '$msg'") or die('query failed');
-   
-   if(mysqli_num_rows($select_message) > 0){
-      $message[] = 'message sent already!';
-   }else{
-      mysqli_query($conn, "INSERT INTO `contact_form`(name, email, number, message) VALUES('$name', '$email', '$number', '$msg')") or die('query failed');
-      $message[] = 'message sent successfully!';
-   }
-
-}
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -90,12 +68,12 @@ if(isset($message)){
 <section class="home" id="home">
 
    <div class="image" data-aos="fade-right">
-      <img src="images/profile 2.jpeg" alt="">
+      <img src="images/profile.21.jpg" alt="">
    </div>
 
    <div class="content">
       <h3 data-aos="fade-up">hi, i am Mostofa Sarker</h3>
-      <span data-aos="fade-up">Network Enginner</span>
+      <span data-aos="fade-up">Sr.Support Enginner-Network</span>
       <p data-aos="fade-up"> Hi, there i'm Mostofa Sarker.I have completed  BSc in Computer
          Scince and Engineering at American international uniersity of
          Bangladesh-(AIUB)</p>
@@ -180,24 +158,23 @@ if(isset($message)){
             <h3 class="title" data-aos="fade-left">experience</h3>
 
             <div class="box" data-aos="fade-left">
-               <span>( 2022 - Present )</span>
-               <h3>Computer Networking</h3>
+               <span>( 2022 - 16 April 2023 )</span>
+               <h3>Jr.Support Engineer</h3>
                <p>Triangle Services Limited</p>
             </div>
 
+        
             <div class="box" data-aos="fade-left">
-               <span>( 2022 -Present  )</span>
-               <h3>Network Troubleshoot</h3>
-               <p>Triangle Services Limited</p>
-            </div>
-
-            
-            <div class="box" data-aos="fade-left">
-               <span>( 2022 - Present )</span>
+               <span>( 2022 - 16 April 2023 )</span>
                <h3>Customer Support FCR</h3>
                <p>Triangle Services Limited</p>
             </div>
 
+            <div class="box" data-aos="fade-left">
+               <span>( 2023 -Present  )</span>
+               <h3>Sr.Support Engineer-Network</h3>
+               <p>Agni Systems Limited</p>
+            </div>
          </div>
 
       </div>
